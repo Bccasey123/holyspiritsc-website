@@ -1,0 +1,30 @@
+<!-- =====================================================
+     SHARED NAV PARTIAL
+     Copy this block into every page. When we migrate to
+     Astro this becomes a single NavBar.astro component.
+     ===================================================== -->
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+
+    <a href="/index.html" class="nav-logo" aria-label="Holy Spirit Catholic Church home">
+      <span class="nav-logo__name">Holy Spirit</span>
+      <span class="nav-logo__location">Johns Island, SC</span>
+    </a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="/welcome.html">Welcome</a></li>
+      <li><a href="/worship/index.html">Worship</a></li>
+      <li><a href="/grow/index.html">Grow</a></li>
+      <li><a href="/serve/index.html">Serve</a></li>
+      <li class="nav-cta"><a href="/give.html">Give</a></li>
+      <li><a href="/about.html">About Us</a></li>
+    </ul>
+
+  </div>
+</nav>

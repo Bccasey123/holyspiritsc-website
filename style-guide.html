@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Guide — Holy Spirit Catholic Church</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ---- Style Guide page–specific styles (not for production pages) ---- */
+    body { background-color: var(--hs-cream); }
+
+    .sg-nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: var(--hs-white);
+      border-bottom: 1px solid var(--hs-stone-light);
+      padding: var(--hs-space-3) var(--hs-space-8);
+      display: flex;
+      gap: var(--hs-space-6);
+      align-items: center;
+      font-size: var(--hs-text-sm);
+      flex-wrap: wrap;
+    }
+    .sg-nav strong {
+      color: var(--hs-navy);
+      font-size: var(--hs-text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-right: var(--hs-space-2);
+    }
+    .sg-nav a {
+      color: var(--hs-stone);
+      font-size: var(--hs-text-xs);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .sg-nav a:hover { color: var(--hs-gold); }
+
+    .sg-hero {
+      background-color: var(--hs-navy);
+      padding: var(--hs-space-16) var(--hs-space-8);
+      text-align: center;
+    }
+    .sg-hero h1 {
+      font-family: var(--hs-font-heading);
+      color: var(--hs-white);
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      margin-bottom: var(--hs-space-3);
+    }
+    .sg-hero p {
+      color: rgba(255,255,255,0.65);
+      font-size: var(--hs-text-base);
+      max-width: 640px;
+      margin-inline: auto;
+      margin-bottom: 0;
+    }
+
+    .sg-section {
+      padding-block: var(--hs-space-16);
+      border-bottom: 1px solid var(--hs-stone-light);
+    }
+    .sg-section:last-of-type { border-bottom: none; }
+
+    .sg-label {
+      display: inline-block;
+      font-family: var(--hs-font-body);
+      font-size: var(--hs-text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--hs-stone);
+      margin-bottom: var(--hs-space-6);
+      padding-bottom: var(--hs-space-2);
+      border-bottom: 2px solid var(--hs-gold);
+    }
+
+    .sg-section-title {
+      font-family: var(--hs-font-heading);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--hs-navy);
+      margin-bottom: var(--hs-space-4);
+    }
+
+    .sg-section-desc {
+      font-size: var(--hs-text-base);
+      color: var(--hs-stone);
+      max-width: 640px;
+      margin-bottom: var(--hs-space-10);
+      line-height: var(--hs-leading-relaxed);
+    }
+
+    /* Color swatches */
+    .swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: var(--hs-space-5);
+      margin-bottom: var(--hs-space-10);
+    }
+
+    .swatch {
+      border-radius: var(--hs-radius-md);
+      overflow: hidden;
+      box-shadow: var(--hs-shadow-sm);
+    }
+
+    .swatch__block {
+      height: 80px;
+    }
+
+    .swatch__info {
+      background: var(--hs-white);
+      padding: var(--hs-space-3) var(--hs-space-4);
+    }
+
+    .swatch__name {
+      font-size: var(--hs-text-sm);
+      font-weight: 600;
+      color: var(--hs-navy);
+      display: block;
+    }
+
+    .swatch__hex {
+      font-size: var(--hs-text-xs);
+      color: var(--hs-stone);
+      font-family: 'Courier New', monospace;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .swatch__var {
+      font-size: 0.68rem;
+      color: var(--hs-stone-mid);
+      font-family: 'Courier New', monospace;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .swatch__use {
+      font-size: 0.68rem;
+      color: var(--hs-stone);
+      display: block;
+      margin-top: var(--hs-space-2);
+      line-height: 1.4;
+    }
+
+    /* Gray comparison */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--hs-space-6);
+      margin-bottom: var(--hs-space-10);
+    }
+
+    .comparison__panel {
+      border-radius: var(--hs-radius-md);
+      padding: var(--hs-space-8);
+    }
+
+    .comparison__panel--old {
+      background: #F5F5F5;
+      border: 2px solid #D1D5DB;
+    }
+
+    .comparison__panel--new {
+      background: var(--hs-parchment);
+      border: 2px solid var(--hs-stone-mid);
+    }
+
+    .comparison__badge {
+      display: inline-block;
+      font-size: var(--hs-text-xs);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 2px 10px;
+      border-radius: var(--hs-radius-full);
+      margin-bottom: var(--hs-space-4);
+    }
+
+    .comparison__badge--old {
+      background: #D1D5DB;
+      color: #374151;
+    }
+
+    .comparison__badge--new {
+      background: var(--hs-gold);
+      color: var(--hs-navy);
+    }
+
+    /* Font specimens */
+    .font-specimen {
+      background: var(--hs-white);
+      border: 1px solid var(--hs-stone-light);
+      border-radius: var(--hs-radius-md);
+      padding: var(--hs-space-8);
+      margin-bottom: var(--hs-space-6);
+    }
+
+    .font-meta {
+      font-size: var(--hs-text-xs);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--hs-stone);
+      margin-bottom: var(--hs-space-6);
+      padding-bottom: var(--hs-space-3);
+      border-bottom: 1px solid var(--hs-stone-light);
+    }
+
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: var(--hs-space-6);
+      padding-block: var(--hs-space-4);
+      border-bottom: 1px solid var(--hs-stone-light);
+    }
+
+    .type-row:last-child { border-bottom: none; }
+
+    .type-label {
+      font-size: var(--hs-text-xs);
+      color: var(--hs-stone);
+      font-family: 'Courier New', monospace;
+      min-width: 100px;
+      flex-shrink: 0;
+    }
+
+    .type-sample { flex: 1; }
+
+    /* Button showcase */
+    .btn-row {
+      display: flex;
+      align-items: center;
+      gap: var(--hs-space-4);
+      flex-wrap: wrap;
+      padding: var(--hs-space-8);
+      border-radius: var(--hs-radius-md);
+      margin-bottom: var(--hs-space-4);
+    }
+
+    .btn-row--light { background: var(--hs-white); border: 1px solid var(--hs-stone-light); }
+    .btn-row--dark  { background: var(--hs-navy); }
+
+    /* Component preview */
+    .preview-box {
+      background: var(--hs-white);
+      border: 1px solid var(--hs-stone-light);
+      border-radius: var(--hs-radius-md);
+      padding: var(--hs-space-8);
+    }
+
+    .preview-box--dark {
+      background: var(--hs-navy);
+    }
+
+    /* Voice samples */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--hs-space-6);
+    }
+
+    .voice-panel {
+      border-radius: var(--hs-radius-md);
+      padding: var(--hs-space-6);
+    }
+
+    .voice-panel--bad {
+      background: #FEF2F2;
+      border-left: 4px solid #EF4444;
+    }
+
+    .voice-panel--good {
+      background: var(--hs-gold-faint);
+      border-left: 4px solid var(--hs-gold);
+    }
+
+    .voice-label {
+      font-size: var(--hs-text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: var(--hs-space-3);
+    }
+
+    .voice-label--bad  { color: #DC2626; }
+    .voice-label--good { color: var(--hs-gold); }
+
+    .voice-text {
+      font-size: var(--hs-text-base);
+      color: var(--hs-ink-mid);
+      font-style: italic;
+      margin: 0;
+    }
+
+    @media (max-width: 640px) {
+      .comparison  { grid-template-columns: 1fr; }
+      .voice-grid  { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Style Guide Nav -->
+  <nav class="sg-nav">
+    <strong>Holy Spirit · Style Guide</strong>
+    <a href="#colors">Colors</a>
+    <a href="#gray">Gray Problem</a>
+    <a href="#fonts">Fonts</a>
+    <a href="#type-scale">Type Scale</a>
+    <a href="#buttons">Buttons</a>
+    <a href="#components">Components</a>
+    <a href="#voice">Voice &amp; Tone</a>
+    <a href="index.html" style="margin-left:auto; color:var(--hs-gold);">← Back to Site</a>
+  </nav>
+
+  <!-- Hero -->
+  <div class="sg-hero">
+    <h1>Holy Spirit Catholic Church — Design System</h1>
+    <p>This page documents every color, font, and component we use. Open it alongside any page you're building as a reference. When in doubt, check here first.</p>
+  </div>
+
+  <div class="container" style="padding-block: var(--hs-space-4);">
+
+    <!-- =====================================================
+         COLORS
+         ===================================================== -->
+    <section class="sg-section" id="colors">
+      <span class="sg-label">01 — Color Palette</span>
+      <h2 class="sg-section-title">5 Core Colors</h2>
+      <p class="sg-section-desc">
+        Every color on the site comes from this set. Each token name starts with <code>--hs-</code>.
+        Use the token names in your CSS — never hardcode hex values. That way, if we ever adjust
+        a shade, it updates everywhere automatically.
+      </p>
+
+      <p class="sg-label" style="margin-bottom: var(--hs-space-4);">1. Navy — Primary Brand</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch__block" style="background:#1E3347;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Navy</span>
+            <span class="swatch__hex">#1E3347</span>
+            <span class="swatch__var">--hs-navy</span>
+            <span class="swatch__use">Nav, page headers, footers, headings, dark backgrounds</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#2D4E72;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Navy Mid</span>
+            <span class="swatch__hex">#2D4E72</span>
+            <span class="swatch__var">--hs-navy-mid</span>
+            <span class="swatch__use">Hover states, lighter dark panels</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#EBF0F6; border:1px solid #d0dae5;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Navy Faint</span>
+            <span class="swatch__hex">#EBF0F6</span>
+            <span class="swatch__var">--hs-navy-faint</span>
+            <span class="swatch__use">Use sparingly — subtle tint only</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="sg-label" style="margin-bottom: var(--hs-space-4);">2. Gold — Liturgical Accent</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch__block" style="background:#B8901F;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Gold</span>
+            <span class="swatch__hex">#B8901F</span>
+            <span class="swatch__var">--hs-gold</span>
+            <span class="swatch__use">CTAs, active nav indicators, links on hover, Give button</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#D4AA45;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Gold Light</span>
+            <span class="swatch__hex">#D4AA45</span>
+            <span class="swatch__var">--hs-gold-light</span>
+            <span class="swatch__use">Hover on gold, footer headings, eyebrows on dark bg</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#F8F0DA; border:1px solid #e5d89a;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Gold Faint</span>
+            <span class="swatch__hex">#F8F0DA</span>
+            <span class="swatch__var">--hs-gold-faint</span>
+            <span class="swatch__use">Placeholder backgrounds, subtle gold-wash sections</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="sg-label" style="margin-bottom: var(--hs-space-4);">3. Cream — Warm Page Background</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch__block" style="background:#FAF7F1; border:1px solid #e8e0d5;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Cream</span>
+            <span class="swatch__hex">#FAF7F1</span>
+            <span class="swatch__var">--hs-cream</span>
+            <span class="swatch__use">Default page background. Never use stark white as the page base.</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#FFFFFF; border:1px solid #e0dbd4;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">White</span>
+            <span class="swatch__hex">#FFFFFF</span>
+            <span class="swatch__var">--hs-white</span>
+            <span class="swatch__use">Cards, modals, form inputs — elements that sit on cream</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="sg-label" style="margin-bottom: var(--hs-space-4);">4. Stone — Warm Gray Replacement</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch__block" style="background:#766556;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Stone</span>
+            <span class="swatch__hex">#766556</span>
+            <span class="swatch__var">--hs-stone</span>
+            <span class="swatch__use">Secondary body text, captions, supporting copy</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#A8967F;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Stone Mid</span>
+            <span class="swatch__hex">#A8967F</span>
+            <span class="swatch__var">--hs-stone-mid</span>
+            <span class="swatch__use">Borders, dividers, placeholder icon fills</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#EDE5D9; border:1px solid #d9cfbf;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Stone Light</span>
+            <span class="swatch__hex">#EDE5D9</span>
+            <span class="swatch__var">--hs-stone-light</span>
+            <span class="swatch__use">Subtle card borders, section dividers, rule lines</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="sg-label" style="margin-bottom: var(--hs-space-4);">5. Parchment — Deep Warm Background</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch__block" style="background:#EDE0CC;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Parchment</span>
+            <span class="swatch__hex">#EDE0CC</span>
+            <span class="swatch__var">--hs-parchment</span>
+            <span class="swatch__use">Alternating section backgrounds, feature callouts</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#D9C9B0;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Parchment Dark</span>
+            <span class="swatch__hex">#D9C9B0</span>
+            <span class="swatch__var">--hs-parchment-dark</span>
+            <span class="swatch__use">Borders and dividers used on parchment backgrounds</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="sg-label" style="margin-bottom: var(--hs-space-4);">Text Colors</p>
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch__block" style="background:#1C1510;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Ink</span>
+            <span class="swatch__hex">#1C1510</span>
+            <span class="swatch__var">--hs-ink</span>
+            <span class="swatch__use">Primary body text. Warm near-black — not pure black.</span>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch__block" style="background:#3D3028;"></div>
+          <div class="swatch__info">
+            <span class="swatch__name">Ink Mid</span>
+            <span class="swatch__hex">#3D3028</span>
+            <span class="swatch__var">--hs-ink-mid</span>
+            <span class="swatch__use">Subtext, secondary headings, lead paragraphs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         THE GRAY PROBLEM
+         ===================================================== -->
+    <section class="sg-section" id="gray">
+      <span class="sg-label">02 — The Gray Problem</span>
+      <h2 class="sg-section-title">Why We Removed Gray</h2>
+      <p class="sg-section-desc">
+        The live holyspiritsc.org site uses cold blue-grays (#6B6B6B for body text, #E8E4DE for backgrounds)
+        inherited from the Diocesan template. These colors read as institutional — the same palette you'd
+        find on a DMV website or an insurance form. Cold gray signals "you're a transaction, not a person."
+        <br><br>
+        Every gray in this system has been replaced with a <strong>warm stone or parchment equivalent</strong>.
+        The visual hierarchy is identical — light, medium, and dark neutrals — but the warmth changes how
+        the page feels to read.
+      </p>
+
+      <div class="comparison">
+        <div class="comparison__panel comparison__panel--old">
+          <span class="comparison__badge comparison__badge--old">Old — Live Site</span>
+          <p style="color:#6B6B6B; font-size:var(--hs-text-base); margin-bottom:var(--hs-space-3); font-family:'Helvetica Neue', Arial, sans-serif;">
+            Welcome to Holy Spirit Parish on beautiful Johns Island, South Carolina. We are a community of believers and a spiritual family that is supportive and loving.
+          </p>
+          <p style="font-size:var(--hs-text-xs); color:#9CA3AF; font-family:monospace; margin:0;">
+            Color: #6B6B6B on #E8E4DE<br>
+            Font: Helvetica Neue / Georgia<br>
+            Feel: Institutional, cold, DMV-adjacent
+          </p>
+        </div>
+        <div class="comparison__panel comparison__panel--new">
+          <span class="comparison__badge comparison__badge--new">New — Design System</span>
+          <p style="color:var(--hs-stone); font-size:var(--hs-text-base); margin-bottom:var(--hs-space-3); font-family:'Source Sans 3', sans-serif;">
+            Welcome to Holy Spirit Parish on beautiful Johns Island, South Carolina. We are a community of believers and a spiritual family that is supportive and loving.
+          </p>
+          <p style="font-size:var(--hs-text-xs); color:var(--hs-stone-mid); font-family:monospace; margin:0;">
+            Color: --hs-stone on --hs-parchment<br>
+            Font: Source Sans 3 / Lora<br>
+            Feel: Warm, grounded, welcoming
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         FONTS
+         ===================================================== -->
+    <section class="sg-section" id="fonts">
+      <span class="sg-label">03 — Typography</span>
+      <h2 class="sg-section-title">Font Pairing</h2>
+      <p class="sg-section-desc">
+        Two fonts, used consistently. Lora for all headings (warmth, dignity, classical weight).
+        Source Sans 3 for all body text, UI, and captions (readability, openness, approachability).
+        Never mix these roles — headings stay Lora, body text stays Source Sans 3.
+      </p>
+
+      <div class="font-specimen">
+        <p class="font-meta">Lora — Headings &nbsp;·&nbsp; <code>font-family: var(--hs-font-heading)</code></p>
+
+        <div class="type-row">
+          <span class="type-label">Regular 400</span>
+          <p class="type-sample" style="font-family:'Lora',serif; font-weight:400; font-size:1.4rem; color:var(--hs-navy); margin:0;">
+            Come, follow me — and I will make you more than you can imagine.
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Italic 400</span>
+          <p class="type-sample" style="font-family:'Lora',serif; font-style:italic; font-size:1.2rem; color:var(--hs-ink-mid); margin:0;">
+            "You were not made for survival. You were made for abundance."
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Medium 500</span>
+          <p class="type-sample" style="font-family:'Lora',serif; font-weight:500; font-size:1.4rem; color:var(--hs-navy); margin:0;">
+            Sacraments · Formation · Community · Service
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Semi-Bold 600</span>
+          <p class="type-sample" style="font-family:'Lora',serif; font-weight:600; font-size:1.75rem; color:var(--hs-navy); margin:0;">
+            Receive More — Because God has more for you.
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Bold 700</span>
+          <p class="type-sample" style="font-family:'Lora',serif; font-weight:700; font-size:2rem; color:var(--hs-navy); margin:0;">
+            Holy Spirit Catholic Church
+          </p>
+        </div>
+      </div>
+
+      <div class="font-specimen">
+        <p class="font-meta">Source Sans 3 — Body &nbsp;·&nbsp; <code>font-family: var(--hs-font-body)</code></p>
+
+        <div class="type-row">
+          <span class="type-label">Light 300</span>
+          <p class="type-sample" style="font-family:'Source Sans 3',sans-serif; font-weight:300; color:var(--hs-ink); margin:0;">
+            Weekend Masses: Saturday 5:30 pm · Sunday 9:00 &amp; 11:00 am · Sunday (Spanish) 1:00 pm
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Regular 400</span>
+          <p class="type-sample" style="font-family:'Source Sans 3',sans-serif; font-weight:400; color:var(--hs-ink); margin:0;">
+            Whether you're visiting for the first time or exploring the Catholic faith, you've found a community that's glad you're here. Holy Spirit Parish exists to help you discover the abundant life God has always had in mind for you.
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Medium 500</span>
+          <p class="type-sample" style="font-family:'Source Sans 3',sans-serif; font-weight:500; color:var(--hs-navy); margin:0;">
+            Join us for Mass, confession, or any of our parish ministries.
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Semi-Bold 600</span>
+          <p class="type-sample" style="font-family:'Source Sans 3',sans-serif; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; font-size:0.88rem; color:var(--hs-stone); margin:0;">
+            Nav labels · Buttons · Eyebrows · Footer headings
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Bold 700</span>
+          <p class="type-sample" style="font-family:'Source Sans 3',sans-serif; font-weight:700; color:var(--hs-navy); margin:0;">
+            Find a Ministry · Give Online · I'm New Here
+          </p>
+        </div>
+        <div class="type-row">
+          <span class="type-label">Italic 400</span>
+          <p class="type-sample" style="font-family:'Source Sans 3',sans-serif; font-style:italic; color:var(--hs-stone); margin:0;">
+            Content coming soon — check back for updates from the parish office.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         TYPE SCALE
+         ===================================================== -->
+    <section class="sg-section" id="type-scale">
+      <span class="sg-label">04 — Type Scale</span>
+      <h2 class="sg-section-title">Heading Levels</h2>
+      <p class="sg-section-desc">
+        Each level has a specific semantic role. Don't pick heading levels for their size — pick them
+        for their meaning in the page hierarchy, then let CSS handle the appearance.
+      </p>
+
+      <div class="preview-box">
+        <span class="eyebrow">Eyebrow Label</span>
+        <h1>H1 — Page Title / Hero Headline</h1>
+        <p class="lead" style="margin-block: var(--hs-space-4);">Lead paragraph — the first sentence that introduces a section or page. Slightly larger and more relaxed than body text. Used once per major section.</p>
+        <hr class="divider">
+        <h2>H2 — Section Heading</h2>
+        <p>Regular body paragraph. Whether you're visiting for the first time or exploring the Catholic faith, you've found a community that's glad you're here. Holy Spirit Parish exists to help you discover the abundant life God has always had in mind for you.</p>
+        <hr class="divider">
+        <h3>H3 — Subsection / Card Title</h3>
+        <p>Supporting paragraph under an h3. Used inside cards, program descriptions, and content blocks. Stays warm and readable at all sizes.</p>
+        <hr class="divider">
+        <h4>H4 — Detail Heading</h4>
+        <p>Fine detail copy — schedule times, names, addresses. <span class="caption">Caption text sits at 14px and uses --hs-stone for color.</span></p>
+        <hr class="divider">
+        <h5>H5 — Label / Overline</h5>
+        <p>Used for category labels and metadata. All caps, widely spaced.</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         BUTTONS
+         ===================================================== -->
+    <section class="sg-section" id="buttons">
+      <span class="sg-label">05 — Buttons</span>
+      <h2 class="sg-section-title">Button Styles</h2>
+      <p class="sg-section-desc">
+        Four button variants. Use Primary for the most important action on a page.
+        Use Secondary or Ghost to offer a secondary path. Never use more than two
+        button types side-by-side — it dilutes both.
+      </p>
+
+      <p style="font-size:var(--hs-text-sm); color:var(--hs-stone); margin-bottom:var(--hs-space-3); font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">On Light Backgrounds</p>
+      <div class="btn-row btn-row--light" style="margin-bottom:var(--hs-space-8);">
+        <a href="#" class="btn btn--primary">Primary — Give Now</a>
+        <a href="#" class="btn btn--secondary">Secondary — Learn More</a>
+        <a href="#" class="btn btn--ghost-dark">Ghost Dark — View All</a>
+        <a href="#" class="btn btn--primary btn--sm">Small Primary</a>
+        <a href="#" class="btn btn--secondary btn--sm">Small Secondary</a>
+      </div>
+
+      <p style="font-size:var(--hs-text-sm); color:var(--hs-stone); margin-bottom:var(--hs-space-3); font-weight:600; text-transform:uppercase; letter-spacing:0.1em;">On Dark (Navy) Backgrounds</p>
+      <div class="btn-row btn-row--dark" style="margin-bottom:var(--hs-space-8);">
+        <a href="#" class="btn btn--primary">Primary — I'm New Here</a>
+        <a href="#" class="btn btn--ghost">Ghost — Mass Times</a>
+        <a href="#" class="btn btn--primary btn--lg">Large Primary</a>
+      </div>
+
+      <h3 style="margin-bottom:var(--hs-space-4);">When to use which</h3>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card__eyebrow">Primary</div>
+          <h4 class="card__title">Gold — --btn--primary</h4>
+          <p class="card__body">The single most important action: Give, I'm New, Register, Sign Up. One per section maximum.</p>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow">Secondary</div>
+          <h4 class="card__title">Navy — .btn--secondary</h4>
+          <p class="card__body">Supporting action on a light background: Learn More, View Schedule, Read More.</p>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow">Ghost</div>
+          <h4 class="card__title">White outline — .btn--ghost</h4>
+          <p class="card__body">Secondary action on dark (navy) backgrounds only. Becomes white on hover.</p>
+        </div>
+        <div class="card">
+          <div class="card__eyebrow">Ghost Dark</div>
+          <h4 class="card__title">Navy outline — .btn--ghost-dark</h4>
+          <p class="card__body">Third option on light backgrounds. Use when a filled button feels too heavy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         COMPONENTS
+         ===================================================== -->
+    <section class="sg-section" id="components">
+      <span class="sg-label">06 — Components</span>
+      <h2 class="sg-section-title">Repeating Patterns</h2>
+      <p class="sg-section-desc">These are the building blocks that appear across multiple pages.</p>
+
+      <h3 style="margin-bottom:var(--hs-space-6);">Section Backgrounds</h3>
+      <div style="display:grid; gap:var(--hs-space-4); margin-bottom:var(--hs-space-10);">
+        <div class="section--white" style="padding:var(--hs-space-6); border-radius:var(--hs-radius-md); border:1px solid var(--hs-stone-light);">
+          <code style="font-size:var(--hs-text-xs); color:var(--hs-stone);">.section--white</code>
+          <p style="margin-top:var(--hs-space-2); margin-bottom:0;">White background — cards sit on this so they pop visually.</p>
+        </div>
+        <div class="section--cream" style="padding:var(--hs-space-6); border-radius:var(--hs-radius-md);">
+          <code style="font-size:var(--hs-text-xs); color:var(--hs-stone);">.section--cream</code>
+          <p style="margin-top:var(--hs-space-2); margin-bottom:0;">Cream background — the default page background. Most sections live here.</p>
+        </div>
+        <div class="section--parchment" style="padding:var(--hs-space-6); border-radius:var(--hs-radius-md);">
+          <code style="font-size:var(--hs-text-xs); color:var(--hs-stone);">.section--parchment</code>
+          <p style="margin-top:var(--hs-space-2); margin-bottom:0;">Parchment — deeper warm background for alternating sections, feature callouts, CTAs.</p>
+        </div>
+        <div class="section--navy" style="padding:var(--hs-space-6); border-radius:var(--hs-radius-md);">
+          <code style="font-size:var(--hs-text-xs); color:rgba(255,255,255,0.5);">.section--navy</code>
+          <p style="margin-top:var(--hs-space-2); margin-bottom:0; color:rgba(255,255,255,0.8);">Navy — footer, hero, major CTAs, dark feature sections. Use at most 2–3 times per page.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:var(--hs-space-6);">Cards</h3>
+      <div class="card-grid" style="margin-bottom:var(--hs-space-10);">
+        <div class="card">
+          <div class="card__icon">✝</div>
+          <div class="card__eyebrow">Weekend</div>
+          <h3 class="card__title">Mass Schedule</h3>
+          <p class="card__body">Saturday 5:30 pm · Sunday 9 &amp; 11 am · Sunday (Spanish) 1 pm</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🙏</div>
+          <div class="card__eyebrow">Sacrament</div>
+          <h3 class="card__title">Reconciliation</h3>
+          <p class="card__body">Mon–Fri 8:15–8:30 am · Saturday 3:30–5:00 pm</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">✨</div>
+          <div class="card__eyebrow">Formation</div>
+          <h3 class="card__title">Becoming Catholic</h3>
+          <p class="card__body">OCIA classes begin June 22. Mondays 6–7 pm in the Mary Room.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">❤️</div>
+          <div class="card__eyebrow">Outreach</div>
+          <h3 class="card__title">Adopt-a-Family</h3>
+          <p class="card__body">Serving ~300 families at Christmas and Independence Day for 25+ years.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:var(--hs-space-6);">Eyebrow + Heading pattern</h3>
+      <div class="preview-box" style="margin-bottom:var(--hs-space-10);">
+        <span class="eyebrow">Formation</span>
+        <h2 style="margin-bottom:var(--hs-space-4);">Develop a deeper relationship with God</h2>
+        <p class="lead">The Catholic faith has more to offer than most people ever experience. Our formation programs exist to help you go deeper — whether you're brand new or have been Catholic your whole life.</p>
+      </div>
+
+      <h3 style="margin-bottom:var(--hs-space-6);">Navigation Preview</h3>
+      <div style="border-radius:var(--hs-radius-md); overflow:hidden; box-shadow:var(--hs-shadow-lg); margin-bottom:var(--hs-space-4);">
+        <nav class="site-nav" style="position:relative; height:auto; min-height:72px; box-shadow:none;">
+          <div class="nav-inner">
+            <a href="#" class="nav-logo">
+              <span class="nav-logo__name">Holy Spirit</span>
+              <span class="nav-logo__location">Johns Island, SC</span>
+            </a>
+            <ul class="nav-links" id="nav-links-preview" role="list" style="display:flex;">
+              <li><a href="#">Welcome</a></li>
+              <li><a href="#" aria-current="page">Worship</a></li>
+              <li><a href="#">Grow</a></li>
+              <li><a href="#">Serve</a></li>
+              <li><a href="#">About Us</a></li>
+              <li class="nav-cta"><a href="#">Give</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <p class="caption">Active page uses a gold underline indicator. "Give" always appears as the gold CTA button.</p>
+    </section>
+
+    <!-- =====================================================
+         VOICE & TONE
+         ===================================================== -->
+    <section class="sg-section" id="voice">
+      <span class="sg-label">07 — Voice &amp; Tone</span>
+      <h2 class="sg-section-title">How We Speak</h2>
+      <p class="sg-section-desc">
+        The guiding question for every section of copy: <strong>"How does this make a parishioner feel?"</strong>
+        Warm and inviting — not institutional or formal. The three audiences we speak to simultaneously:
+        new visitors, current parishioners, and those exploring the faith. Every page should feel safe for all three.
+      </p>
+
+      <div class="voice-grid">
+        <div class="voice-panel voice-panel--bad">
+          <p class="voice-label voice-label--bad">Avoid — Institutional</p>
+          <p class="voice-text">"The Sacrament of Baptism is the first sacrament of initiation into the Body of Christ, as defined in the Catechism of the Catholic Church (CCC 1213)."</p>
+        </div>
+        <div class="voice-panel voice-panel--good">
+          <p class="voice-label voice-label--good">Use — Welcoming</p>
+          <p class="voice-text">"Baptism is where it all begins — the moment you're welcomed into God's family. Whether it's for your child or yourself, we'd love to walk through it with you."</p>
+        </div>
+
+        <div class="voice-panel voice-panel--bad">
+          <p class="voice-label voice-label--bad">Avoid — Cold procedure</p>
+          <p class="voice-text">"To register as a parishioner, submit the Current Registration Form available as a PDF download from the parish office."</p>
+        </div>
+        <div class="voice-panel voice-panel--good">
+          <p class="voice-label voice-label--good">Use — Personal invitation</p>
+          <p class="voice-text">"Ready to make Holy Spirit your parish home? We'd love to have you. Registration takes just a few minutes — call us or stop by the office any weekday."</p>
+        </div>
+
+        <div class="voice-panel voice-panel--bad">
+          <p class="voice-label voice-label--bad">Avoid — Jargon-first</p>
+          <p class="voice-text">"The OCIA process consists of four periods: Inquiry, Catechumenate, Purification &amp; Enlightenment, and Mystagogy."</p>
+        </div>
+        <div class="voice-panel voice-panel--good">
+          <p class="voice-label voice-label--good">Use — Human first</p>
+          <p class="voice-text">"Curious about becoming Catholic? You're not alone — and there's no pressure. OCIA is a relaxed, welcoming journey through the faith at your own pace. Classes start June 22."</p>
+        </div>
+
+        <div class="voice-panel voice-panel--bad">
+          <p class="voice-label voice-label--bad">Avoid — Obligation tone</p>
+          <p class="voice-text">"Parishioners are expected to support the parish through tithing of time, talent, and treasure."</p>
+        </div>
+        <div class="voice-panel voice-panel--good">
+          <p class="voice-label voice-label--good">Use — Abundance tone</p>
+          <p class="voice-text">"It's actually good for you to give. God's generosity is bigger than any amount you can offer — but sharing what you have opens something in you too."</p>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <p class="footer-col__heading">Holy Spirit Catholic Church</p>
+          <address>3871 Betsy Kerrison Pkwy<br>Johns Island, SC 29455<br><br>
+            <a href="tel:+18437680357">(843) 768-0357</a><br>
+            <a href="mailto:office@holyspiritsc.org">office@holyspiritsc.org</a>
+          </address>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__heading">Style Guide</p>
+          <ul class="footer-links">
+            <li><a href="#colors">Color Palette</a></li>
+            <li><a href="#gray">Gray Problem</a></li>
+            <li><a href="#fonts">Fonts</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#voice">Voice &amp; Tone</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__heading">Site Pages</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="welcome.html">Welcome</a></li>
+            <li><a href="worship/index.html">Worship</a></li>
+            <li><a href="grow/index.html">Grow</a></li>
+            <li><a href="serve/index.html">Serve</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Holy Spirit Catholic Church. Diocese of Charleston.</span>
+        <span>Design System v1.0</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

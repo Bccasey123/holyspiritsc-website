@@ -1,0 +1,149 @@
+/* ============================================================
+   Holy Spirit Catholic Church — Design System
+   style-guide.css  ·  v1.0
+
+   HOW TO USE
+   In every page stylesheet, add at the top:
+     @import url('style-guide.css');
+   Or link directly in HTML:
+     <link rel="stylesheet" href="css/style-guide.css">
+
+   All tokens use the --hs- prefix ("Holy Spirit") to avoid
+   conflicts with any third-party libraries.
+   ============================================================ */
+
+/* ============================================================
+   FONTS
+   Lora       — headings. A humanist serif: warm, classical,
+                dignified. Designed for screen reading.
+   Source Sans 3 — body. A humanist sans: open, readable,
+                approachable. Pairs beautifully with Lora.
+
+   WHY NOT Georgia / Helvetica Neue (current live site)?
+   Georgia was designed in 1993 for low-res screens and
+   reads as "default institutional." Helvetica Neue is
+   engineered, cold, and corporate. Our audience deserves
+   something warmer.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+
+  /* ----------------------------------------------------------
+     PALETTE — 5 core colors
+
+     1. NAVY   Primary brand, nav, dark sections, headings
+     2. GOLD   Liturgical accent, CTAs, active states
+     3. CREAM  Warm page background (never stark white)
+     4. STONE  Warm body text + secondary UI (replaces cold gray)
+     5. PARCHMENT  Deep warm background for alternating sections
+
+     WHY NO GRAY?
+     The live site uses a cold blue-gray (#6B6B6B and similar)
+     inherited from the Diocesan template. Cold grays make a
+     church feel like a government form or DMV website.
+     Every gray in this system has been replaced with a warm
+     stone/sand/parchment equivalent. The same visual hierarchy
+     is preserved — just made warmer.
+     ---------------------------------------------------------- */
+
+  /* 1. Navy */
+  --hs-navy:           #1E3347;   /* primary dark — nav, headings, footers */
+  --hs-navy-mid:       #2D4E72;   /* lighter navy — hover states, borders */
+  --hs-navy-faint:     #EBF0F6;   /* barely-there blue tint — avoid using frequently */
+
+  /* 2. Gold */
+  --hs-gold:           #B8901F;   /* brand gold — CTAs, active indicators */
+  --hs-gold-light:     #D4AA45;   /* lighter gold — hover, decorative */
+  --hs-gold-faint:     #F8F0DA;   /* gold wash — subtle highlights */
+
+  /* 3. Cream */
+  --hs-cream:          #FAF7F1;   /* primary warm background */
+  --hs-white:          #FFFFFF;   /* cards, modals, pure white moments */
+
+  /* 4. Stone  (warm replacement for all cold grays) */
+  --hs-stone:          #766556;   /* secondary text, captions, subheadings */
+  --hs-stone-mid:      #A8967F;   /* borders, dividers, icon fills */
+  --hs-stone-light:    #EDE5D9;   /* subtle borders on white/cream */
+
+  /* 5. Parchment */
+  --hs-parchment:      #EDE0CC;   /* deep warm background for alternating sections */
+  --hs-parchment-dark: #D9C9B0;   /* darker parchment for borders on parchment bg */
+
+  /* Text */
+  --hs-ink:            #1C1510;   /* warm near-black — primary body text */
+  --hs-ink-mid:        #3D3028;   /* medium warm dark — subtext */
+
+  /* Contextual semantic */
+  --hs-link:           var(--hs-navy);
+  --hs-link-hover:     var(--hs-gold);
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY
+     ---------------------------------------------------------- */
+  --hs-font-heading:   'Lora', Georgia, 'Times New Roman', serif;
+  --hs-font-body:      'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Scale — fluid between mobile min and desktop max */
+  --hs-text-xs:        0.75rem;    /* 12px  — labels, legal, captions */
+  --hs-text-sm:        0.875rem;   /* 14px  — small body, nav */
+  --hs-text-base:      1rem;       /* 16px  — base body */
+  --hs-text-md:        1.125rem;   /* 18px  — lead text */
+  --hs-text-lg:        1.25rem;    /* 20px  — large body, subheadings */
+  --hs-text-xl:        1.5rem;     /* 24px  — h4 territory */
+  --hs-text-2xl:       1.875rem;   /* 30px  — h3 */
+  --hs-text-3xl:       2.25rem;    /* 36px  — h2 */
+  --hs-text-4xl:       3rem;       /* 48px  — h1 */
+  --hs-text-5xl:       3.75rem;    /* 60px  — hero display */
+
+  /* Leading (line-height) */
+  --hs-leading-tight:   1.2;
+  --hs-leading-snug:    1.35;
+  --hs-leading-normal:  1.65;
+  --hs-leading-relaxed: 1.85;
+
+  /* ----------------------------------------------------------
+     SPACING — 4px base unit
+     ---------------------------------------------------------- */
+  --hs-space-1:    0.25rem;   /*  4px */
+  --hs-space-2:    0.5rem;    /*  8px */
+  --hs-space-3:    0.75rem;   /* 12px */
+  --hs-space-4:    1rem;      /* 16px */
+  --hs-space-5:    1.25rem;   /* 20px */
+  --hs-space-6:    1.5rem;    /* 24px */
+  --hs-space-8:    2rem;      /* 32px */
+  --hs-space-10:   2.5rem;    /* 40px */
+  --hs-space-12:   3rem;      /* 48px */
+  --hs-space-16:   4rem;      /* 64px */
+  --hs-space-20:   5rem;      /* 80px */
+  --hs-space-24:   6rem;      /* 96px */
+  --hs-space-32:   8rem;      /* 128px */
+
+  /* ----------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------- */
+  --hs-max-width:        1200px;
+  --hs-max-width-text:    720px;   /* comfortable reading column */
+  --hs-max-width-narrow:  560px;   /* tight content, forms */
+  --hs-nav-height:         72px;
+
+  /* Border radius */
+  --hs-radius-sm:    4px;
+  --hs-radius-md:    8px;
+  --hs-radius-lg:   16px;
+  --hs-radius-full: 9999px;
+
+  /* Shadows — warm-tinted (never pure black) */
+  --hs-shadow-xs:   0 1px  3px  rgba(28, 21, 16, 0.07);
+  --hs-shadow-sm:   0 2px  6px  rgba(28, 21, 16, 0.09);
+  --hs-shadow-md:   0 4px  16px rgba(28, 21, 16, 0.11);
+  --hs-shadow-lg:   0 8px  32px rgba(28, 21, 16, 0.13);
+  --hs-shadow-xl:   0 16px 48px rgba(28, 21, 16, 0.16);
+
+  /* Transitions */
+  --hs-transition:       180ms ease;
+  --hs-transition-slow:  320ms ease;
+}

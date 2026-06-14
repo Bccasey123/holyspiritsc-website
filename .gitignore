@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Node (if we ever add tooling)
+node_modules/
+npm-debug.log*
+
+# Build output (for future Astro migration)
+dist/
+.astro/
+
+# Editor
+.vscode/settings.json
+.idea/
+
+# Environment / secrets
+.env
+.env.local
