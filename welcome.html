@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="New to Holy Spirit Catholic Church? Start here — Johns Island, SC." />
-  <title>Welcome / I'm New | Holy Spirit Catholic Church</title>
+  <meta name="description" content="Welcome to Holy Spirit Catholic Church — Johns Island, SC. Wherever you are on your journey, we are glad you are here." />
+  <title>Welcome | Holy Spirit Catholic Church</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="page-body">
@@ -20,10 +20,33 @@
       </button>
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="welcome.html" aria-current="page">Welcome</a></li>
-        <li><a href="worship/index.html">Worship</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Worship <span class="nav-dropdown__arrow" aria-hidden="true">▾</span></button>
+          <ul class="nav-dropdown__menu" role="list">
+            <li><a href="worship/index.html">Mass Times</a></li>
+            <li><a href="worship/adoration.html">Adoration</a></li>
+            <li><a href="worship/music-ministry.html">Music Ministry</a></li>
+            <li><a href="worship/livestream.html">Livestream</a></li>
+            <li><a href="worship/homily-podcast.html">Homily Podcast</a></li>
+            <li><a href="worship/prayer-requests.html">Prayer Requests</a></li>
+            <li><a href="worship/funerals.html">Funerals</a></li>
+            <li><a href="worship/matrimony.html">Weddings</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Sacraments <span class="nav-dropdown__arrow" aria-hidden="true">▾</span></button>
+          <ul class="nav-dropdown__menu" role="list">
+            <li><a href="worship/baptism.html">Baptism</a></li>
+            <li><a href="worship/confirmation.html">Confirmation</a></li>
+            <li><a href="worship/first-communion.html">Eucharist</a></li>
+            <li><a href="worship/reconciliation.html">Reconciliation</a></li>
+            <li><a href="worship/anointing.html">Anointing of the Sick</a></li>
+            <li><a href="worship/matrimony.html">Marriage</a></li>
+          </ul>
+        </li>
         <li><a href="grow/index.html">Grow</a></li>
         <li><a href="serve/index.html">Serve</a></li>
-        <li class="nav-cta"><a href="give.html">Give</a></li>
+        <li><a href="give.html">Give</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
     </div>
@@ -31,20 +54,231 @@
 
   <header class="page-header">
     <div class="container">
-      <h1>Welcome to Holy Spirit</h1>
-      <p>Whether you're visiting for the first time or finding your way back — you belong here.</p>
+      <h1>Welcome to Holy Spirit Catholic Church</h1>
+      <p>Wherever you are on your journey, we are glad you are here.</p>
     </div>
   </header>
 
   <main>
+
+    <!-- PASTOR WELCOME LETTER -->
     <section class="section">
       <div class="container">
-        <div class="placeholder">
-          <strong>I'm New / Welcome Page</strong><br>
-          Content coming soon: first-time visitor info, what to expect at Mass, how to register as a parishioner, next steps, FAQ.
+        <div class="pastor-note">
+          <div class="pastor-note__photo">
+            <div class="img-placeholder" style="height:100%; border-radius: var(--hs-radius-lg);">Photo of<br>Fr. Stephen Dyas<br>coming soon</div>
+          </div>
+          <div class="pastor-note__text">
+            <span class="eyebrow">From Our Pastor</span>
+            <h2 style="margin-bottom: var(--hs-space-6);">A Warm Welcome from Fr. Stephen</h2>
+            <blockquote>
+              Dear friends,<br><br>
+              It is my great joy to welcome you to Holy Spirit Catholic Church. Whether you are
+              joining us for the first time, returning to the Church after some time away, or
+              exploring the Catholic faith with an open and curious heart — know that you are
+              truly, warmly welcome here.<br><br>
+              This parish is a community of people who believe that God has more in store for
+              each of us than we can ask or imagine. We are not perfect people — far from it —
+              but we are people who are striving together to encounter the living God, to grow in
+              faith, and to love our neighbors as Christ has loved us.<br><br>
+              It is my prayer that you will find in Holy Spirit a community where you belong, where
+              your faith can deepen and come alive, and where the transformative power of Christ
+              working through the Holy Spirit becomes real in your life. I invite you to join us
+              for Mass each week, to take a next step into community, and to let us know how we
+              can support you on your journey.<br><br>
+              God bless you. We are glad you are here.
+            </blockquote>
+            <p class="pastor-note__signature">Father Stephen Dyas</p>
+            <p class="pastor-note__title">Pastor, Holy Spirit Catholic Church</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- WHERE ARE YOU ON YOUR JOURNEY? -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">You Are in the Right Place</span>
+          <h2>What Is Your Current Search?</h2>
+          <p>Tell us where you are, and we will point you in the right direction. Every journey is different — and all are welcome here.</p>
+        </div>
+        <div class="journey-grid">
+          <a href="grow/becoming-catholic.html" class="journey-path">
+            <span class="journey-path__icon">🔍</span>
+            <div>
+              <p class="journey-path__title">I want to learn more about the Catholic faith</p>
+              <p class="journey-path__desc">You have questions about Jesus, Christianity, or what Catholics believe. OCIA is a great place to start — come with your questions, no commitment required.</p>
+            </div>
+          </a>
+          <a href="grow/becoming-catholic.html#ocia" class="journey-path">
+            <span class="journey-path__icon">✝</span>
+            <div>
+              <p class="journey-path__title">I am ready to become a Catholic Christian</p>
+              <p class="journey-path__desc">You feel called to receive the sacraments and enter fully into the Catholic Church. Our OCIA process will walk with you every step of the way.</p>
+            </div>
+          </a>
+          <a href="welcome.html#join" class="journey-path">
+            <span class="journey-path__icon">🏠</span>
+            <div>
+              <p class="journey-path__title">I am Catholic and want to join Holy Spirit Parish</p>
+              <p class="journey-path__desc">You are already Catholic and want to make Holy Spirit your parish home. Registration is simple and we would love to welcome you officially.</p>
+            </div>
+          </a>
+          <a href="serve/index.html" class="journey-path">
+            <span class="journey-path__icon">🤝</span>
+            <div>
+              <p class="journey-path__title">I am already a member and want to grow or serve</p>
+              <p class="journey-path__desc">You are part of our community and feel called to go deeper — in faith, in service, or in community. Explore our formation programs and ministries.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN OUR PARISH -->
+    <section class="section" id="join">
+      <div class="container">
+        <div class="content-with-sidebar">
+          <div>
+            <span class="eyebrow">Become a Parishioner</span>
+            <h2>Join Our Parish Family</h2>
+            <p class="lead">Registration is not just filling out a form — it is a commitment to our community and an invitation into the full life of Holy Spirit Parish.</p>
+            <p>When you register as a parishioner, you are saying that this is your faith home — the community where you will worship, grow, and serve alongside others who are on the same journey. We take that seriously, and we want to walk with you.</p>
+
+            <h3 style="margin-top: var(--hs-space-8); margin-bottom: var(--hs-space-4);">What You Are Committing To</h3>
+            <ul style="line-height: var(--hs-leading-relaxed); color: var(--hs-ink-mid); padding-left: var(--hs-space-6); margin-bottom: var(--hs-space-6);">
+              <li>Worshipping with our community at Sunday Mass</li>
+              <li>Growing spiritually through the life of the parish</li>
+              <li>Supporting the parish community through your time, talent, and treasure</li>
+              <li>Being a neighbor who reflects the love of Christ in our community</li>
+            </ul>
+
+            <h3 style="margin-bottom: var(--hs-space-4);">What You Will Receive</h3>
+            <ul style="line-height: var(--hs-leading-relaxed); color: var(--hs-ink-mid); padding-left: var(--hs-space-6); margin-bottom: var(--hs-space-8);">
+              <li>Our weekly parish email with news, events, and updates</li>
+              <li>Offertory envelopes (optional)</li>
+              <li>A personal welcome from our parish staff</li>
+              <li>Access to all parish sacraments, programs, and ministries</li>
+            </ul>
+
+            <a href="contact.html" class="btn btn--primary">Register as a Parishioner</a>
+            <p style="font-size: var(--hs-text-sm); color: var(--hs-stone); margin-top: var(--hs-space-3);">Questions? Call our office at <a href="tel:+18437680357">(843) 768-0357</a> or email <a href="mailto:office@holyspiritsc.org">office@holyspiritsc.org</a>.</p>
+          </div>
+          <aside class="sidebar">
+            <p class="sidebar__heading">Parish Contact</p>
+            <address style="font-style: normal; line-height: var(--hs-leading-relaxed); color: var(--hs-ink-mid); font-size: var(--hs-text-sm);">
+              Holy Spirit Catholic Church<br>
+              3871 Betsy Kerrison Pkwy<br>
+              Johns Island, SC 29455<br><br>
+              <a href="tel:+18437680357">(843) 768-0357</a><br>
+              <a href="mailto:office@holyspiritsc.org">office@holyspiritsc.org</a><br><br>
+              Office Hours:<br>
+              Mon–Thu 8:30 am–4:00 pm
+            </address>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- RETURNING CATHOLICS -->
+    <section class="section section--parchment">
+      <div class="container container--text">
+        <span class="eyebrow">You Are Always Welcome Back</span>
+        <h2>Have You Been Away from the Church?</h2>
+        <p class="lead">If you have been away from the Catholic Church for a while, please know this: you are always welcome back. No matter how long it has been, or what has kept you away, there is no judgment here — only a warm and open door.</p>
+        <p>Many people find their way back to the Church through a gradual process — beginning by simply attending Mass, then perhaps celebrating the Sacrament of Reconciliation, and reconnecting with a community of faith at their own pace. We understand that returning can feel daunting. We want to make it as simple and as welcoming as possible.</p>
+        <p>We would be honored to walk with you. If you would like to speak with Fr. Stephen or a member of our staff, please reach out — there is no pressure, just an open conversation.</p>
+        <div style="margin-top: var(--hs-space-8); display: flex; gap: var(--hs-space-4); flex-wrap: wrap;">
+          <a href="worship/reconciliation.html" class="btn btn--primary">Learn About Confession</a>
+          <a href="contact.html" class="btn btn--ghost-dark">Reach Out to Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BECOMING CATHOLIC / OCIA -->
+    <section class="section" id="ocia">
+      <div class="container">
+        <div class="content-with-sidebar">
+          <div>
+            <span class="eyebrow">Thinking About Becoming Catholic?</span>
+            <h2>The OCIA Journey</h2>
+            <p class="lead">Do you have questions about Jesus, Christianity, or the Catholic faith? Would you like to receive the sacraments? You are in the right place.</p>
+            <p>OCIA — the Order of Christian Initiation of Adults (formerly known as RCIA) — is not just a class. It is a chance to allow God to speak to you personally, to encounter his love for you, and to discern whether the Catholic Church is where you are being called. You are not required to become Catholic to participate. You are simply invited to come and see.</p>
+            <p>Our OCIA process is a welcoming, unhurried journey through Scripture, Tradition, and the sacraments — accompanied by a community of people who have asked the same questions you are asking.</p>
+
+            <h3 style="margin-top: var(--hs-space-8); margin-bottom: var(--hs-space-4);">OCIA is for you if:</h3>
+            <ul style="line-height: var(--hs-leading-relaxed); color: var(--hs-ink-mid); padding-left: var(--hs-space-6); margin-bottom: var(--hs-space-6);">
+              <li>You have never been baptized and are drawn to the Christian faith</li>
+              <li>You were baptized in another Christian tradition and feel called to become Catholic</li>
+              <li>You were baptized Catholic but never completed your sacraments</li>
+              <li>You simply want to learn more about what Catholics believe</li>
+            </ul>
+
+            <div class="callout" style="margin-bottom: var(--hs-space-8);">
+              <p><strong>Upcoming OCIA Interest Gatherings:</strong></p>
+              <p>June 2026 — Exact date TBD<br>
+              November 2026 — Exact date TBD</p>
+              <p>These informal evenings are a relaxed way to ask questions and meet the team — no obligation to continue.</p>
+            </div>
+
+            <a href="grow/becoming-catholic.html" class="btn btn--primary">Learn More About OCIA</a>
+            <a href="contact.html" class="btn btn--ghost-dark" style="margin-left: var(--hs-space-3);">Express Interest</a>
+          </div>
+          <aside class="sidebar">
+            <p class="sidebar__heading">Quick Facts About OCIA</p>
+            <ul style="list-style: none; font-size: var(--hs-text-sm); color: var(--hs-ink-mid); line-height: var(--hs-leading-relaxed);">
+              <li style="margin-bottom: var(--hs-space-3);">✝ OCIA stands for <em>Order of Christian Initiation of Adults</em> — formerly called RCIA</li>
+              <li style="margin-bottom: var(--hs-space-3);">📅 We begin new groups in June and November</li>
+              <li style="margin-bottom: var(--hs-space-3);">🙋 You can attend an interest gathering with no commitment</li>
+              <li style="margin-bottom: var(--hs-space-3);">💬 All questions are welcome — there are no wrong ones</li>
+              <li>🕊 Many people are received into the Church at the Easter Vigil</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMON QUESTIONS -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">We Have Answers</span>
+          <h2>Common Questions</h2>
+        </div>
+        <div class="faq">
+          <div class="faq__item">
+            <h3 class="faq__question">Where is the church located?</h3>
+            <p class="faq__answer">We are located at <strong>3871 Betsy Kerrison Pkwy, Johns Island, SC 29455</strong>. We are on Johns Island, just minutes from Kiawah Island and a short drive from West Ashley and James Island.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">What are the Mass times?</h3>
+            <p class="faq__answer">Weekend Mass is Saturday at 5:30 pm, Sunday at 9:00 am and 11:00 am, and Sunday in Spanish at 1:00 pm. Daily Mass is Monday–Friday at 8:30 am, and Saturday at 9:00 am in the Chapel. See our full <a href="worship/index.html">Mass schedule</a>.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">How do I register as a parishioner?</h3>
+            <p class="faq__answer">You can <a href="contact.html">register online</a>, stop by the parish office during office hours (Monday–Thursday, 8:30 am–4:00 pm), or call us at <a href="tel:+18437680357">(843) 768-0357</a>. We would love to welcome you officially.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">How do I become Catholic?</h3>
+            <p class="faq__answer">The path to becoming Catholic is through our OCIA process (Order of Christian Initiation of Adults, formerly called RCIA). It is a welcoming, unhurried journey — not just a class. We have interest gatherings in June and November. <a href="grow/becoming-catholic.html">Learn more about OCIA</a>.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">What if I have been away from the Church for a while?</h3>
+            <p class="faq__answer">You are always welcome back. Many people return to the Church gradually — beginning with Mass, then perhaps the Sacrament of Reconciliation. There is no judgment here. If you would like to talk to someone, please <a href="contact.html">reach out to us</a> and we will connect you with Fr. Stephen or a member of our team.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">How do I get involved?</h3>
+            <p class="faq__answer">We have ministries and opportunities to suit every gift, schedule, and stage of life. The best way to start is to browse our <a href="serve/index.html">ministries page</a> or simply contact the parish office and tell us a little about yourself — we will help you find where you fit.</p>
+          </div>
+          <div class="faq__item">
+            <h3 class="faq__question">Are children welcome at Mass?</h3>
+            <p class="faq__answer">Absolutely — children are always welcome at Mass. Families with young children often find our 9:00 am Sunday Mass a good fit. We also offer a Children's Liturgy of the Word at select Masses during the school year. Crying rooms are available if needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -53,28 +287,34 @@
         <div class="footer-col">
           <p class="footer-col__heading">Holy Spirit Catholic Church</p>
           <address>
-            3871 Betsy Kerrison Pkwy<br>Johns Island, SC 29455<br><br>
+            3871 Betsy Kerrison Pkwy<br>
+            Johns Island, SC 29455<br><br>
             <a href="tel:+18437680357">(843) 768-0357</a><br>
             <a href="mailto:office@holyspiritsc.org">office@holyspiritsc.org</a><br><br>
-            Mon–Thu 8:30 am–4:00 pm
+            Office Hours:<br>Mon–Thu 8:30 am–4:00 pm
           </address>
         </div>
         <div class="footer-col">
-          <p class="footer-col__heading">Worship</p>
-          <ul class="footer-links">
-            <li><a href="worship/index.html">Mass Schedule</a></li>
-            <li><a href="worship/adoration.html">Adoration</a></li>
-            <li><a href="worship/reconciliation.html">Confession</a></li>
-            <li><a href="worship/funerals.html">Funerals</a></li>
-          </ul>
+          <p class="footer-col__heading">Mass Times</p>
+          <p>
+            <strong style="color:rgba(255,255,255,0.85);">Weekend</strong><br>
+            Sat 5:30 pm<br>
+            Sun 9:00 &amp; 11:00 am<br>
+            Sun (Spanish) 1:00 pm<br><br>
+            <strong style="color:rgba(255,255,255,0.85);">Daily</strong><br>
+            Mon–Fri 8:30 am<br>
+            Sat 9:00 am (Chapel)
+          </p>
         </div>
         <div class="footer-col">
-          <p class="footer-col__heading">Grow &amp; Serve</p>
+          <p class="footer-col__heading">Explore</p>
           <ul class="footer-links">
+            <li><a href="worship/index.html">Mass Schedule</a></li>
+            <li><a href="worship/reconciliation.html">Confession</a></li>
+            <li><a href="worship/adoration.html">Adoration</a></li>
             <li><a href="grow/becoming-catholic.html">Becoming Catholic</a></li>
-            <li><a href="grow/children-psr.html">Children (PSR)</a></li>
+            <li><a href="grow/children-psr.html">Children's Formation</a></li>
             <li><a href="serve/index.html">Ministries</a></li>
-            <li><a href="serve/volunteer.html">Volunteer</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -85,6 +325,11 @@
             <li><a href="events.html">Events</a></li>
             <li><a href="give.html">Give</a></li>
             <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <p class="footer-col__heading" style="margin-top: var(--hs-space-5);">Follow Us</p>
+          <ul class="footer-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
           </ul>
         </div>
       </div>

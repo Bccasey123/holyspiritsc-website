@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Events and parish calendar at Holy Spirit Catholic Church — Johns Island, SC." />
   <title>Events | Holy Spirit Catholic Church</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -19,10 +20,33 @@
       </button>
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="/welcome.html">Welcome</a></li>
-        <li><a href="/worship/index.html">Worship</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Worship <span class="nav-dropdown__arrow" aria-hidden="true">▾</span></button>
+          <ul class="nav-dropdown__menu" role="list">
+            <li><a href="/worship/index.html">Mass Times</a></li>
+            <li><a href="/worship/adoration.html">Adoration</a></li>
+            <li><a href="/worship/music-ministry.html">Music Ministry</a></li>
+            <li><a href="/worship/livestream.html">Livestream</a></li>
+            <li><a href="/worship/homily-podcast.html">Homily Podcast</a></li>
+            <li><a href="/worship/prayer-requests.html">Prayer Requests</a></li>
+            <li><a href="/worship/funerals.html">Funerals</a></li>
+            <li><a href="/worship/matrimony.html">Weddings</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Sacraments <span class="nav-dropdown__arrow" aria-hidden="true">▾</span></button>
+          <ul class="nav-dropdown__menu" role="list">
+            <li><a href="/worship/baptism.html">Baptism</a></li>
+            <li><a href="/worship/confirmation.html">Confirmation</a></li>
+            <li><a href="/worship/first-communion.html">Eucharist</a></li>
+            <li><a href="/worship/reconciliation.html">Reconciliation</a></li>
+            <li><a href="/worship/anointing.html">Anointing of the Sick</a></li>
+            <li><a href="/worship/matrimony.html">Marriage</a></li>
+          </ul>
+        </li>
         <li><a href="/grow/index.html">Grow</a></li>
         <li><a href="/serve/index.html">Serve</a></li>
-        <li class="nav-cta"><a href="/give.html">Give</a></li>
+        <li><a href="/give.html">Give</a></li>
         <li><a href="/about.html">About Us</a></li>
       </ul>
     </div>
@@ -48,43 +72,12 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-col">
-          <p class="footer-col__heading">Holy Spirit Catholic Church</p>
-          <address>3871 Betsy Kerrison Pkwy<br>Johns Island, SC 29455<br><br><a href="tel:+18437680357">(843) 768-0357</a><br><a href="mailto:office@holyspiritsc.org">office@holyspiritsc.org</a><br><br>Mon–Thu 8:30 am–4:00 pm</address>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col__heading">Worship</p>
-          <ul class="footer-links">
-            <li><a href="/worship/index.html">Mass Schedule</a></li>
-            <li><a href="/worship/adoration.html">Adoration</a></li>
-            <li><a href="/worship/reconciliation.html">Confession</a></li>
-            <li><a href="/worship/funerals.html">Funerals</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col__heading">Grow &amp; Serve</p>
-          <ul class="footer-links">
-            <li><a href="/grow/becoming-catholic.html">Becoming Catholic</a></li>
-            <li><a href="/grow/children-psr.html">Children (PSR)</a></li>
-            <li><a href="/serve/index.html">Ministries</a></li>
-            <li><a href="/serve/volunteer.html">Volunteer</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col__heading">Connect</p>
-          <ul class="footer-links">
-            <li><a href="/welcome.html">I'm New Here</a></li>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/events.html">Events</a></li>
-            <li><a href="/give.html">Give</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
+        <div class="footer-col"><p class="footer-col__heading">Holy Spirit Catholic Church</p><address>3871 Betsy Kerrison Pkwy<br>Johns Island, SC 29455<br><br><a href="tel:+18437680357">(843) 768-0357</a><br><a href="mailto:office@holyspiritsc.org">office@holyspiritsc.org</a><br><br>Office Hours:<br>Mon–Thu 8:30 am–4:00 pm</address></div>
+        <div class="footer-col"><p class="footer-col__heading">Mass Times</p><p><strong style="color:rgba(255,255,255,0.85);">Weekend</strong><br>Sat 5:30 pm<br>Sun 9:00 &amp; 11:00 am<br>Sun (Spanish) 1:00 pm<br><br><strong style="color:rgba(255,255,255,0.85);">Daily</strong><br>Mon–Fri 8:30 am<br>Sat 9:00 am (Chapel)</p></div>
+        <div class="footer-col"><p class="footer-col__heading">Explore</p><ul class="footer-links"><li><a href="/worship/index.html">Mass Schedule</a></li><li><a href="/worship/reconciliation.html">Confession</a></li><li><a href="/worship/adoration.html">Adoration</a></li><li><a href="/grow/becoming-catholic.html">Becoming Catholic</a></li><li><a href="/grow/children-psr.html">Children's Formation</a></li><li><a href="/serve/index.html">Ministries</a></li></ul></div>
+        <div class="footer-col"><p class="footer-col__heading">Connect</p><ul class="footer-links"><li><a href="/welcome.html">I'm New Here</a></li><li><a href="/about.html">About Us</a></li><li><a href="/events.html" aria-current="page">Events</a></li><li><a href="/give.html">Give</a></li><li><a href="/contact.html">Contact</a></li></ul><p class="footer-col__heading" style="margin-top: var(--hs-space-5);">Follow Us</p><ul class="footer-links"><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 Holy Spirit Catholic Church. Diocese of Charleston.</span>
-        <span>Johns Island, SC</span>
-      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Holy Spirit Catholic Church. Diocese of Charleston.</span><span>Johns Island, SC</span></div>
     </div>
   </footer>
 

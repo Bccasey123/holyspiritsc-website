@@ -3,52 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Holy Spirit Catholic Church — Johns Island, SC. Receive More — Because God has more for you." />
+  <meta name="description" content="Holy Spirit Catholic Church — Johns Island, SC. A growing, thriving Catholic community. All are welcome." />
   <title>Holy Spirit Catholic Church | Johns Island, SC</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="page-body">
 
-  <!-- =====================================================
-       NAVIGATION
-       ===================================================== -->
+  <!-- NAV -->
   <nav class="site-nav" aria-label="Main navigation">
     <div class="nav-inner">
-
       <a href="index.html" class="nav-logo" aria-label="Holy Spirit Catholic Church home">
         <span class="nav-logo__name">Holy Spirit</span>
         <span class="nav-logo__location">Johns Island, SC</span>
       </a>
-
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
-
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="welcome.html">Welcome</a></li>
-        <li><a href="worship/index.html">Worship</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Worship <span class="nav-dropdown__arrow" aria-hidden="true">▾</span></button>
+          <ul class="nav-dropdown__menu" role="list">
+            <li><a href="worship/index.html">Mass Times</a></li>
+            <li><a href="worship/adoration.html">Adoration</a></li>
+            <li><a href="worship/music-ministry.html">Music Ministry</a></li>
+            <li><a href="worship/livestream.html">Livestream</a></li>
+            <li><a href="worship/homily-podcast.html">Homily Podcast</a></li>
+            <li><a href="worship/prayer-requests.html">Prayer Requests</a></li>
+            <li><a href="worship/funerals.html">Funerals</a></li>
+            <li><a href="worship/matrimony.html">Weddings</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">Sacraments <span class="nav-dropdown__arrow" aria-hidden="true">▾</span></button>
+          <ul class="nav-dropdown__menu" role="list">
+            <li><a href="worship/baptism.html">Baptism</a></li>
+            <li><a href="worship/confirmation.html">Confirmation</a></li>
+            <li><a href="worship/first-communion.html">Eucharist</a></li>
+            <li><a href="worship/reconciliation.html">Reconciliation</a></li>
+            <li><a href="worship/anointing.html">Anointing of the Sick</a></li>
+            <li><a href="worship/matrimony.html">Marriage</a></li>
+          </ul>
+        </li>
         <li><a href="grow/index.html">Grow</a></li>
         <li><a href="serve/index.html">Serve</a></li>
-        <li class="nav-cta"><a href="give.html">Give</a></li>
+        <li><a href="give.html">Give</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
-
     </div>
   </nav>
 
-  <!-- =====================================================
-       HERO
-       ===================================================== -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero__bg" role="presentation"></div>
     <div class="container">
       <div class="hero__content">
         <p class="eyebrow">Johns Island, SC</p>
-        <h1 class="hero__title">Receive More —<br>Because God has more for you.</h1>
-        <p class="hero__subtitle">You weren't created to just survive life — you were created for life in abundance.</p>
-        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <h1 class="hero__title">Receive More —<br>Because God Has More for You.</h1>
+        <p class="hero__subtitle">Whether you are visiting for the first time, have been part of our family for years, or are exploring the Catholic faith — you are welcome here. God has more in store for you than you can imagine.</p>
+        <p class="hero__address">
+          Holy Spirit Catholic Church &nbsp;·&nbsp; 3871 Betsy Kerrison Pkwy, Johns Island, SC 29455
+        </p>
+        <div class="hero__actions">
           <a href="welcome.html" class="btn btn--primary">I'm New Here</a>
           <a href="worship/index.html" class="btn btn--ghost">Mass Times</a>
         </div>
@@ -56,13 +72,10 @@
     </div>
   </section>
 
-  <!-- =====================================================
-       MASS TIMES CARDS
-       ===================================================== -->
+  <!-- MASS TIMES -->
   <section class="section section--cream">
     <div class="container">
       <div class="card-grid">
-
         <div class="card">
           <div class="card__icon">✝</div>
           <h3 class="card__title">Weekend Mass</h3>
@@ -72,7 +85,6 @@
             Sunday (Spanish) 1:00 pm
           </p>
         </div>
-
         <div class="card">
           <div class="card__icon">🕊</div>
           <h3 class="card__title">Daily Mass</h3>
@@ -81,16 +93,15 @@
             Saturday 9:00 am (Chapel)
           </p>
         </div>
-
         <div class="card">
           <div class="card__icon">🙏</div>
           <h3 class="card__title">Confession</h3>
           <p class="card__body">
             Mon–Fri 8:15–8:30 am<br>
-            Saturday 3:30–5:00 pm
+            Saturday 3:30–5:00 pm<br>
+            Or by appointment
           </p>
         </div>
-
         <div class="card">
           <div class="card__icon">✨</div>
           <h3 class="card__title">Adoration</h3>
@@ -99,68 +110,221 @@
             First Fridays 9:00–10:00 am
           </p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- =====================================================
-       THREE PILLARS
-       ===================================================== -->
+  <!-- PASTOR WELCOME NOTE -->
   <section class="section">
     <div class="container">
-      <h2 style="text-align:center; margin-bottom:var(--hs-space-8);">God Has More For You</h2>
-      <div class="card-grid">
-
-        <div class="card">
-          <h3 class="card__title">Discover More</h3>
-          <p class="card__body">Encounter God through the sacraments, Mass, and prayer.</p>
-          <a href="worship/index.html" class="btn btn--primary" style="margin-top:1rem;">Worship</a>
+      <div class="pastor-note">
+        <div class="pastor-note__photo">
+          <div class="img-placeholder" style="height:100%; border-radius: var(--hs-radius-lg);">Photo of<br>Fr. Stephen Dyas<br>coming soon</div>
         </div>
-
-        <div class="card">
-          <h3 class="card__title">Develop More</h3>
-          <p class="card__body">Deepen your faith through formation, OCIA, and community.</p>
-          <a href="grow/index.html" class="btn btn--primary" style="margin-top:1rem;">Grow</a>
+        <div class="pastor-note__text">
+          <span class="eyebrow">A Word from Our Pastor</span>
+          <blockquote>
+            Welcome to Holy Spirit Catholic Church. It is a great blessing to have you join us.
+            Whether you are new to our community, a longtime parishioner, or exploring the
+            Catholic faith for the very first time, we welcome and embrace you wholeheartedly.
+            We want to walk with you in your journey with Christ.<br><br>
+            Our parish exists to help every person encounter the living God — in the sacraments,
+            in community, and in service to one another. You were made for more than you may
+            realize, and we believe God is inviting you into something beautiful here. I am
+            grateful you are here, and I hope Holy Spirit Catholic Church feels like home.
+          </blockquote>
+          <p class="pastor-note__signature">Father Stephen Dyas</p>
+          <p class="pastor-note__title">Pastor, Holy Spirit Catholic Church</p>
         </div>
-
-        <div class="card">
-          <h3 class="card__title">Deliver More</h3>
-          <p class="card__body">Put your time, talent, and treasure to work for others.</p>
-          <a href="serve/index.html" class="btn btn--primary" style="margin-top:1rem;">Serve</a>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- =====================================================
-       EVENTS PLACEHOLDER
-       ===================================================== -->
+  <!-- THREE PILLARS -->
   <section class="section section--cream">
     <div class="container">
-      <h2 style="margin-bottom:var(--hs-space-8);">Upcoming Events</h2>
-      <div class="placeholder">Events will be displayed here — content coming soon.</div>
+      <div class="section-heading">
+        <span class="eyebrow">How We Grow Together</span>
+        <h2>God Has More for You</h2>
+        <p>Our parish life is built around three simple invitations. Wherever you are in your journey, there is a place for you here.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <h3 class="card__title">Discover More</h3>
+          <p class="card__body">Encounter God through the sacraments, Mass, adoration, and the rich prayer life of our parish community. Every sacrament is an invitation to go deeper with God.</p>
+          <a href="worship/index.html" class="btn btn--primary" style="margin-top:1.5rem;">Worship</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Develop More</h3>
+          <p class="card__body">Deepen your faith through Bible study, retreats, adult formation, OCIA, children's religious education, and youth ministry. There is formation here for every age and every stage of life.</p>
+          <a href="grow/index.html" class="btn btn--primary" style="margin-top:1.5rem;">Grow</a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">Deliver More</h3>
+          <p class="card__body">Put your time, talent, and treasure to work — serving our neighbors, strengthening our community, and sharing the love of Christ with everyone we encounter.</p>
+          <a href="serve/index.html" class="btn btn--primary" style="margin-top:1.5rem;">Serve</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- =====================================================
-       NEWS PLACEHOLDER
-       ===================================================== -->
+  <!-- LIFE IN ABUNDANCE -->
+  <section class="section">
+    <div class="container container--text">
+      <div class="section-heading">
+        <span class="eyebrow">Life in Abundance</span>
+        <h2>There Is Always More</h2>
+      </div>
+      <p class="lead" style="text-align:center;">
+        You were not created to just survive life — you were created for life in abundance.
+        At Holy Spirit Catholic Church you will find a growing, thriving Catholic community
+        who embrace the transformative power of Christ working through the Holy Spirit to
+        deepen their faith while welcoming and serving their neighbors.
+      </p>
+      <p style="text-align:center; margin-top: var(--hs-space-8);">
+        <a href="welcome.html" class="btn btn--secondary">Find Your Place Here</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- STORIES OF MORE -->
+  <section class="section section--parchment">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Stories of More</span>
+        <h2>What Happens When People Open Themselves to Receiving More</h2>
+        <p>These are the stories of ordinary people who said yes — and found something extraordinary waiting for them.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p class="testimonial__quote">I moved to Johns Island not knowing anyone. I walked into Holy Spirit Catholic Church on a Sunday morning not sure what to expect. Within a month I had friends, a small group, and a sense of belonging I had not felt in years.</p>
+          <p class="testimonial__name">Maria T.</p>
+          <p class="testimonial__role">Parishioner since 2022</p>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__quote">I had been away from the Church for almost fifteen years. Coming back felt impossible — until I walked through these doors. No judgment, just welcome. I received the Sacrament of Reconciliation for the first time in a long time and it changed my life.</p>
+          <p class="testimonial__name">James R.</p>
+          <p class="testimonial__role">Returned Catholic</p>
+        </div>
+        <div class="testimonial">
+          <p class="testimonial__quote">I came to OCIA with a thousand questions and zero expectations. What I found was not a class — it was an encounter with God. I was baptized at the Easter Vigil and I have never been the same.</p>
+          <p class="testimonial__name">Sarah M.</p>
+          <p class="testimonial__role">Received into the Church, Easter 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING EVENTS -->
+  <section class="section section--cream">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Mark Your Calendar</span>
+        <h2>Upcoming Events</h2>
+      </div>
+      <div class="event-grid">
+
+        <div class="event-card">
+          <div class="event-card__image">
+            <div class="img-placeholder" style="height:100%;">OCIA gathering photo<br>coming soon</div>
+          </div>
+          <div class="event-card__body">
+            <p class="event-card__date">June 2026 &amp; November 2026 — Dates TBD</p>
+            <h3 class="event-card__title">OCIA Interest Gathering</h3>
+            <p class="event-card__desc">Curious about the Catholic faith? Come to one of our OCIA Interest Gatherings — no obligation, no pressure, just an open and welcoming conversation. We meet twice a year, in June and November.</p>
+            <a href="grow/becoming-catholic.html" class="btn btn--primary">Learn More &amp; Register</a>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card__image">
+            <div class="img-placeholder" style="height:100%;">Couples dinner photo<br>coming soon</div>
+          </div>
+          <div class="event-card__body">
+            <p class="event-card__date">Date TBD — 2026</p>
+            <h3 class="event-card__title">Couples Night</h3>
+            <p class="event-card__desc">An evening of good food, laughter, and community for married couples and those in committed relationships. A wonderful opportunity to connect with other couples in the parish in a relaxed and joyful setting.</p>
+            <a href="events.html" class="btn btn--primary">Learn More &amp; Register</a>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-card__image">
+            <div class="img-placeholder" style="height:100%;">Women's retreat photo<br>coming soon</div>
+          </div>
+          <div class="event-card__body">
+            <p class="event-card__date">September 2026 — Date TBD</p>
+            <h3 class="event-card__title">Women's Retreat</h3>
+            <p class="event-card__desc">A weekend set apart for rest, reflection, and renewal. Come encounter God in a deeper way alongside other women of the parish. Space is limited — register early.</p>
+            <a href="events.html" class="btn btn--primary">Learn More &amp; Register</a>
+          </div>
+        </div>
+
+      </div>
+      <p style="text-align:center; margin-top: var(--hs-space-10);">
+        <a href="events.html" class="btn btn--ghost-dark">View All Events</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- STAY CONNECTED -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="connect-section">
+        <div class="connect-section__image">
+          <div class="img-placeholder" style="height:320px; background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.4);">Parish family photo<br>coming soon</div>
+        </div>
+        <div>
+          <span class="eyebrow" style="color: var(--hs-gold-light);">Stay in the Loop</span>
+          <h2 style="color: var(--hs-white); margin-bottom: var(--hs-space-4);">Stay Connected</h2>
+          <p style="color: rgba(255,255,255,0.8); line-height: var(--hs-leading-relaxed); margin-bottom: var(--hs-space-2);">
+            Sign up for our weekly email to receive all updates — Mass changes, events, formation opportunities, and parish news delivered straight to your inbox.
+          </p>
+          <form class="email-signup" action="#" method="post" style="margin-top: var(--hs-space-6);">
+            <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required />
+            <button type="submit" class="btn btn--primary">Sign Up</button>
+          </form>
+          <p style="font-size: var(--hs-text-xs); color: rgba(255,255,255,0.4); margin-top: var(--hs-space-3);">We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
   <section class="section">
     <div class="container">
-      <h2 style="margin-bottom:var(--hs-space-8);">Parish News</h2>
-      <div class="placeholder">Latest news and announcements will appear here.</div>
+      <div class="section-heading">
+        <span class="eyebrow">Take the Next Step</span>
+        <h2>Where Would You Like to Begin?</h2>
+        <p>Everyone starts somewhere. Here are three of the most common next steps for people finding their way into our community.</p>
+      </div>
+      <div class="next-steps-grid">
+        <div class="next-step">
+          <div class="next-step__number">1</div>
+          <h3>Join Our Parish</h3>
+          <p>Make Holy Spirit Catholic Church your parish home. Registration is simple and connects you fully to our community.</p>
+          <a href="welcome.html#join" class="btn btn--primary">Register as a Parishioner</a>
+        </div>
+        <div class="next-step">
+          <div class="next-step__number">2</div>
+          <h3>Becoming Catholic</h3>
+          <p>Curious about the Catholic faith? Our OCIA process is a welcoming journey of discovery, not just a class.</p>
+          <a href="grow/becoming-catholic.html" class="btn btn--primary">Learn About OCIA</a>
+        </div>
+        <div class="next-step">
+          <div class="next-step__number">3</div>
+          <h3>Get Involved</h3>
+          <p>Find a ministry that fits your gifts and your schedule. There is a place for you to serve here.</p>
+          <a href="serve/index.html" class="btn btn--primary">Explore Ministries</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-
         <div class="footer-col">
           <p class="footer-col__heading">Holy Spirit Catholic Church</p>
           <address>
@@ -168,30 +332,32 @@
             Johns Island, SC 29455<br><br>
             <a href="tel:+18437680357">(843) 768-0357</a><br>
             <a href="mailto:office@holyspiritsc.org">office@holyspiritsc.org</a><br><br>
-            Mon–Thu 8:30 am–4:00 pm
+            Office Hours:<br>Mon–Thu 8:30 am–4:00 pm
           </address>
         </div>
-
         <div class="footer-col">
-          <p class="footer-col__heading">Worship</p>
+          <p class="footer-col__heading">Mass Times</p>
+          <p>
+            <strong style="color:rgba(255,255,255,0.85);">Weekend</strong><br>
+            Sat 5:30 pm<br>
+            Sun 9:00 &amp; 11:00 am<br>
+            Sun (Spanish) 1:00 pm<br><br>
+            <strong style="color:rgba(255,255,255,0.85);">Daily</strong><br>
+            Mon–Fri 8:30 am<br>
+            Sat 9:00 am (Chapel)
+          </p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col__heading">Explore</p>
           <ul class="footer-links">
             <li><a href="worship/index.html">Mass Schedule</a></li>
-            <li><a href="worship/adoration.html">Adoration</a></li>
             <li><a href="worship/reconciliation.html">Confession</a></li>
-            <li><a href="worship/funerals.html">Funerals</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <p class="footer-col__heading">Grow &amp; Serve</p>
-          <ul class="footer-links">
+            <li><a href="worship/adoration.html">Adoration</a></li>
             <li><a href="grow/becoming-catholic.html">Becoming Catholic</a></li>
-            <li><a href="grow/children-psr.html">Children (PSR)</a></li>
+            <li><a href="grow/children-psr.html">Children's Formation</a></li>
             <li><a href="serve/index.html">Ministries</a></li>
-            <li><a href="serve/volunteer.html">Volunteer</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <p class="footer-col__heading">Connect</p>
           <ul class="footer-links">
@@ -201,10 +367,13 @@
             <li><a href="give.html">Give</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
+          <p class="footer-col__heading" style="margin-top: var(--hs-space-5);">Follow Us</p>
+          <ul class="footer-links">
+            <li><a href="#" aria-label="Holy Spirit on Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Holy Spirit on Instagram">Instagram</a></li>
+          </ul>
         </div>
-
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 Holy Spirit Catholic Church. Diocese of Charleston.</span>
         <span>Johns Island, SC</span>

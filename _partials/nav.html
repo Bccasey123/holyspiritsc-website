@@ -1,7 +1,8 @@
 <!-- =====================================================
-     SHARED NAV PARTIAL
-     Copy this block into every page. When we migrate to
-     Astro this becomes a single NavBar.astro component.
+     SHARED NAV PARTIAL — canonical reference
+     Root pages use relative hrefs (no leading /).
+     Subdirectory pages use absolute hrefs (with leading /).
+     When migrating to Astro this becomes NavBar.astro.
      ===================================================== -->
 <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
@@ -12,17 +13,45 @@
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
 
     <ul class="nav-links" id="nav-links" role="list">
       <li><a href="/welcome.html">Welcome</a></li>
-      <li><a href="/worship/index.html">Worship</a></li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+          Worship <span class="nav-dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown__menu" role="list">
+          <li><a href="/worship/index.html">Mass Times</a></li>
+          <li><a href="/worship/adoration.html">Adoration</a></li>
+          <li><a href="/worship/music-ministry.html">Music Ministry</a></li>
+          <li><a href="/worship/livestream.html">Livestream</a></li>
+          <li><a href="/worship/homily-podcast.html">Homily Podcast</a></li>
+          <li><a href="/worship/prayer-requests.html">Prayer Requests</a></li>
+          <li><a href="/worship/funerals.html">Funerals</a></li>
+          <li><a href="/worship/matrimony.html">Weddings</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button class="nav-dropdown__trigger" aria-expanded="false" aria-haspopup="true">
+          Sacraments <span class="nav-dropdown__arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="nav-dropdown__menu" role="list">
+          <li><a href="/worship/baptism.html">Baptism</a></li>
+          <li><a href="/worship/confirmation.html">Confirmation</a></li>
+          <li><a href="/worship/first-communion.html">Eucharist</a></li>
+          <li><a href="/worship/reconciliation.html">Reconciliation</a></li>
+          <li><a href="/worship/anointing.html">Anointing of the Sick</a></li>
+          <li><a href="/worship/matrimony.html">Marriage</a></li>
+        </ul>
+      </li>
+
       <li><a href="/grow/index.html">Grow</a></li>
       <li><a href="/serve/index.html">Serve</a></li>
-      <li class="nav-cta"><a href="/give.html">Give</a></li>
+      <li><a href="/give.html">Give</a></li>
       <li><a href="/about.html">About Us</a></li>
     </ul>
 
